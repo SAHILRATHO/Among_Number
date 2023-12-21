@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Largest Among Number</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h1>Find Tha Largest Among Three Number</h1>
+
+        <div class="text">
+            <label for="v1"> Enter Number 1:</label>
+            <input type="number" id="v1"><br> <br>
+            <label for="v2"> Enter Number 2:</label>
+            <input type="number" id="v2"><br> <br>
+            <label for="v3">  Enter Number 3:</label>
+            <input type="number" id="v3">
+        </div>
+
+        <div class="btn">
+            <input type="button" id="enter" value="Find Largest" onclick="checkLarge()">
+
+        </div>
+        <div class="text">
+            <p id="sum"></p>
+        </div>
+    </div>
+    <script>
+        function checkLarge() {
+            var num1 = parseInt(document.getElementById("v1").value)
+            var num2 = parseInt(document.getElementById("v2").value)
+            var num3= parseInt(document.getElementById("v3").value)
+
+            if (!isNaN(num1) || !isNaN(num2) || !isNaN(num3)) {
+                if(num1>=num2 && num1>=num3)
+                {
+                    document.getElementById("sum").innerHTML = `Tha Largest Number Is:${num1}`
+                }
+                else if(num2>=num1 && num2>=num3)
+                {
+                    document.getElementById("sum").innerHTML =`Tha Largest Number Is:${num2}`
+                }
+                else if(num3){
+                    document.getElementById("sum").innerHTML = `Tha Largest Number Is:${num3}`
+                }
+            }
+            else {
+                document.getElementById("sum").innerText = "Plase enter a valid number"
+            }
+        }
+
+    </script>
+</body>
+</html>
